@@ -1,6 +1,22 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+
+@keyframes wobble-vertical {
+  16.65% { transform: translateY(8px); }
+  33.3%  { transform: translateY(-6px); }
+  49.95% { transform: translateY(4px); }
+  66.6%  { transform: translateY(-2px); }
+  83.25% { transform: translateY(1px); }
+  100%   { transform: translateY(0); }
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
@@ -13,10 +29,17 @@ body {
 header {
     background: #66a3ff;
     color: #000000; /* Black text for maximum visibility */
-    padding: 5px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 700;
+    padding: 5px 0;
+}
+
+header h1 {
+
+    margin: 0px;
+    line-height: 1.2;
+    padding: auto;
 }
 
 nav {
@@ -55,8 +78,8 @@ h1, h2, h3 {
 
 h1 {
 
-    padding-top: 50px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
@@ -66,48 +89,55 @@ ul {
 
 .profile-section {
     display: flex;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
 }
 
 .profile-text {
-    flex: 3;
+    flex: 2;
     font-size: 1.1em;
 }
 
-.profile-image {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eaeaea;
-    border: 5px solid #ccc;
-    height: 220px;
-    border-radius: 30px;
-    width: 100px;
-    margin-top: 67px;
 
-    
-}
 .profile-image img {
     object-fit: cover;
     border-radius: 50%;
-    width: 80%; /* fills parent container */
+    width: 100%;
+    max-width: 200px;
     height: auto;
+    flex: 1;
+    align-items: center;
+    padding-right: 7px;
+    
     
 
 }
 
 .socialButtons {
-  display: inline-block;
-
+  display: flex;
+  flex-direction: row;
   -webkit-tap-highlight-color: transparent;
   transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.socialButtons:hover {
+.github {
+
+    padding-right: 10px;
+    padding-left: 5px
+}
+
+
+
+.github:hover {
+  display: inline-block;
+
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   animation-name: wobble-vertical;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -115,19 +145,20 @@ ul {
 
 }
 
-.socialButtons a {
-  margin: 0 15px;
-  color: #333;
-  transition: color 0.3s ease;
-}
+.linkedin:hover {
+  display: inline-block;
 
-.socialButtons a:hover {
-  color: #0056b3;
+  -webkit-tap-highlight-color: transparent;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   animation-name: wobble-vertical;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
+
 }
+
 
 
 a {
